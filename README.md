@@ -1,3 +1,3 @@
 # motus-pilates-demo
 
-Build 01.2 em consolidação na branch `build-01-2-consolidacao`.
+Build 01.2 — consolidação de linguagem, fotografia e motion.
