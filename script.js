@@ -3,94 +3,72 @@ const menuBtn=document.getElementById('menuBtn');
 const mobileMenu=document.getElementById('mobileMenu');
 const mobileCta=document.getElementById('mobileCta');
 const finalCta=document.getElementById('finalCta');
-const threeNumber=document.getElementById('threeNumber');
 
 menuBtn?.addEventListener('click',()=>{
   const open=!mobileMenu.classList.contains('open');
-  mobileMenu.classList.toggle('open',open);menuBtn.classList.toggle('open',open);
-  menuBtn.setAttribute('aria-expanded',String(open));menuBtn.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');
+  mobileMenu.classList.toggle('open',open);
+  menuBtn.classList.toggle('open',open);
+  menuBtn.setAttribute('aria-expanded',String(open));
 });
 document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click',()=>{
   mobileMenu.classList.remove('open');menuBtn.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');
 }));
 
-const onScroll=()=>{
-  header?.classList.toggle('scrolled',window.scrollY>34);
-  if(threeNumber&&window.innerWidth>900&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
-    const r=threeNumber.getBoundingClientRect();
-    const p=Math.max(-1,Math.min(1,(innerHeight/2-r.top)/innerHeight));
-    threeNumber.style.transform=`translate3d(0,${p*8}px,0)`;
-  }
-  if(window.innerWidth<=640&&mobileCta&&finalCta){
+function onScroll(){
+  header?.classList.toggle('scrolled',scrollY>24);
+  if(innerWidth<=640&&mobileCta&&finalCta){
     const top=finalCta.getBoundingClientRect().top;
-    mobileCta.classList.toggle('visible',window.scrollY>innerHeight*.72&&top>innerHeight*.82);
+    mobileCta.classList.toggle('visible',scrollY>innerHeight*.7&&top>innerHeight*.8);
   }
-};
-window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-
-const intent=document.querySelector('.intent-reveal');
-if(intent){
-  const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.22});
-  io.observe(intent);
 }
+addEventListener('scroll',onScroll,{passive:true});onScroll();
 
-const stage=document.getElementById('movementStage');
-const cards=[...document.querySelectorAll('.movement-card')];
-const counter=document.getElementById('movementCounter');
-const labels=['Controle','Precisão','Fluidez','Flexibilidade'];
-let active=0,dragging=false,startX=0,dragX=0;
-const clamp=(n,min,max)=>Math.max(min,Math.min(max,n));
+const benefits=[
+  ['01','Força','Construção gradual de estabilidade e controle para os movimentos do dia a dia.'],
+  ['02','Mobilidade','Prática que explora amplitudes de movimento com atenção e respeito ao corpo.'],
+  ['03','Equilíbrio','Exercícios que estimulam coordenação, estabilidade e segurança corporal.'],
+  ['04','Postura','Mais percepção sobre alinhamentos e hábitos durante a rotina.'],
+  ['05','Consciência corporal','Uma relação mais presente entre respiração, atenção e movimento.']
+];
+const bNum=document.getElementById('benefitNumber'),bTitle=document.getElementById('benefitTitle'),bText=document.getElementById('benefitText');
+document.querySelectorAll('.benefit-dot').forEach(btn=>btn.addEventListener('click',()=>{
+  const i=Number(btn.dataset.benefit);
+  document.querySelectorAll('.benefit-dot').forEach(x=>x.classList.remove('is-active'));
+  btn.classList.add('is-active');
+  if(bNum)bNum.textContent=benefits[i][0];
+  if(bTitle)bTitle.textContent=benefits[i][1];
+  if(bText)bText.textContent=benefits[i][2];
+}));
 
-function slotFor(index){
-  let d=(index-active+cards.length)%cards.length;
-  if(d>cards.length/2)d-=cards.length;
-  return d;
-}
-function renderMovement(animate=true){
-  if(!stage||!cards.length)return;
-  const mobile=window.innerWidth<=640;
-  const width=Math.max(stage.clientWidth*(mobile?.7:.44),1);
-  const progress=clamp(-dragX/width,-.95,.95);
-  cards.forEach((card,index)=>{
-    let slot=slotFor(index)-progress;
-    let x,y,rot,scale,opacity,blur,z;
-    if(mobile){
-      x=slot*58;
-      y=slot<0?Math.abs(slot)*54:slot* -43;
-      rot=slot*5.4;
-      scale=1-Math.min(Math.abs(slot),2)*.06;
-      opacity=Math.abs(slot)>1.7?.12:1-Math.min(Math.abs(slot),1.8)*.19;
-      blur=Math.max(0,Math.abs(slot)-1)*.7;
-    }else{
-      x=slot*57;
-      y=slot===0?0:(slot>0?-54+Math.min(slot,2)*18:48+Math.abs(slot)*10);
-      rot=slot*4.4;
-      scale=1-Math.min(Math.abs(slot),2)*.075;
-      opacity=Math.abs(slot)>1.8?.08:1-Math.min(Math.abs(slot),1.6)*.2;
-      blur=Math.max(0,Math.abs(slot)-1)*.55;
-    }
-    z=40-Math.round(Math.abs(slot)*10);
-    card.classList.toggle('dragging',dragging&&!animate);
-    if(animate)card.style.transition='';else card.style.transition='none';
-    card.style.zIndex=String(z);card.style.opacity=String(Math.max(opacity,.06));card.style.filter=`blur(${blur}px)`;
-    card.style.transform=`translate3d(calc(-50% + ${x}%), calc(-50% + ${y}px), 0) rotate(${rot}deg) scale(${scale})`;
-    card.setAttribute('aria-hidden',Math.abs(slot)>.55?'true':'false');
+const motionCards=[...document.querySelectorAll('.motion-card')];
+const motionCounter=document.getElementById('movementCounter');
+const motionLabels=['Controle','Precisão','Fluidez','Flexibilidade'];
+let active=0,startX=null;
+function renderMotion(){
+  motionCards.forEach((card,i)=>{
+    let delta=i-active; const n=motionCards.length;
+    if(delta>n/2)delta-=n;
+    if(delta<-n/2)delta+=n;
+    const abs=Math.abs(delta);
+    const mobile=innerWidth<=640;
+    const x=mobile?delta*48:delta*78;
+    const y=mobile?abs*18:abs*22;
+    const scale=1-abs*(mobile?.08:.095);
+    const opacity=abs===0?1:abs===1?.48:.12;
+    const blur=abs===0?0:abs===1?.5:1.2;
+    const rot=delta*(mobile?2.5:2);
+    card.style.zIndex=String(20-abs*5);
+    card.style.opacity=String(opacity);
+    card.style.filter=`blur(${blur}px)`;
+    card.style.transform=`translate3d(${x}%,${y}px,0) scale(${scale}) rotate(${rot}deg)`;
   });
-  if(counter)counter.textContent=`0${active+1} / 04 · ${labels[active]}`;
+  if(motionCounter)motionCounter.textContent=`0${active+1} / 04 · ${motionLabels[active]}`;
 }
-function move(d){active=(active+d+cards.length)%cards.length;dragX=0;renderMovement(true)}
-function finish(e){
-  if(!dragging)return;dragging=false;
-  const threshold=Math.min(72,(stage?.clientWidth||360)*.16);
-  if(Math.abs(dragX)>threshold)active=(active+(dragX<0?1:-1)+cards.length)%cards.length;
-  dragX=0;renderMovement(true);
-  if(e&&stage?.hasPointerCapture?.(e.pointerId))stage.releasePointerCapture(e.pointerId);
-}
-stage?.addEventListener('pointerdown',e=>{dragging=true;startX=e.clientX;stage.setPointerCapture?.(e.pointerId);renderMovement(false)});
-stage?.addEventListener('pointermove',e=>{if(!dragging)return;dragX=e.clientX-startX;renderMovement(false)});
-stage?.addEventListener('pointerup',finish);stage?.addEventListener('pointercancel',finish);
-stage?.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();move(1)}if(e.key==='ArrowLeft'){e.preventDefault();move(-1)}});
-document.getElementById('nextMovement')?.addEventListener('click',()=>move(1));
-document.getElementById('prevMovement')?.addEventListener('click',()=>move(-1));
-window.addEventListener('resize',()=>renderMovement(true));
-renderMovement(true);
+function moveMotion(d){active=(active+d+motionCards.length)%motionCards.length;renderMotion()}
+document.getElementById('prevMovement')?.addEventListener('click',()=>moveMotion(-1));
+document.getElementById('nextMovement')?.addEventListener('click',()=>moveMotion(1));
+const stage=document.getElementById('movementStage');
+stage?.addEventListener('pointerdown',e=>{startX=e.clientX;stage.setPointerCapture?.(e.pointerId)});
+stage?.addEventListener('pointerup',e=>{if(startX==null)return;const dx=e.clientX-startX;if(Math.abs(dx)>45)moveMotion(dx<0?1:-1);startX=null});
+stage?.addEventListener('keydown',e=>{if(e.key==='ArrowRight')moveMotion(1);if(e.key==='ArrowLeft')moveMotion(-1)});
+addEventListener('resize',renderMotion);renderMotion();
