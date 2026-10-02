@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="Motus Pilates no Taquaral, Campinas — movimento com atenção, turmas de até três pessoas e um espaço acolhedor." />
   <meta name="theme-color" content="#f3efe5" />
-  <title>Motus Pilates · Taquaral</title>
+  <meta property="og:title" content="Motus Pilates · Taquaral, Campinas" />
+  <meta property="og:description" content="Studio de Pilates no Taquaral, em Campinas, com acompanhamento próximo e turmas de até três pessoas." />
+  <meta property="og:type" content="website" />
+  <title>Motus Pilates no Taquaral · Campinas/SP</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
@@ -35,7 +38,7 @@
     <a href="#a-motus">A Motus</a><a href="#pilates">Pilates</a><a href="#espaco">O espaço</a><a href="#contato">Contato</a>
     <a class="nav-cta" href="https://wa.me/5519982597807" target="_blank" rel="noreferrer">Agendar aula</a>
   </nav>
-  <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+  <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span></button>
 </header>
 <nav class="mobile-menu" id="mobileMenu" aria-label="Menu móvel">
   <a href="#a-motus">A Motus</a><a href="#pilates">Pilates</a><a href="#espaco">O espaço</a><a href="#contato">Contato</a>
@@ -44,7 +47,7 @@
 
 <main>
   <section class="hero" id="inicio">
-    <img class="hero-image" src="https://images.partners.gympass.com/image/partners/v1_CtK7ShFM4ETT_8uY4KFD6A/lg_e4e8b03f-fdd9-4846-bffa-1275a41fa68a_IMG4991.jpeg" alt="Ambiente da Motus Pilates" />
+    <img class="hero-image" src="https://images.partners.gympass.com/image/partners/v1_CtK7ShFM4ETT_8uY4KFD6A/lg_e4e8b03f-fdd9-4846-bffa-1275a41fa68a_IMG4991.jpeg" alt="Ambiente da Motus Pilates" fetchpriority="high" />
     <div class="hero-overlay"></div>
     <div class="hero-content wrap">
       <p class="eyebrow hero-eyebrow">PILATES · TAQUARAL · CAMPINAS</p>
@@ -103,11 +106,11 @@
       </div>
       <div class="benefits-orbit" role="tablist" aria-label="Benefícios do Pilates">
         <span class="orbit-ring ring-a" aria-hidden="true"></span><span class="orbit-ring ring-b" aria-hidden="true"></span>
-        <button class="benefit-dot is-active" data-benefit="0">Força</button>
-        <button class="benefit-dot" data-benefit="1">Mobilidade</button>
-        <button class="benefit-dot" data-benefit="2">Equilíbrio</button>
-        <button class="benefit-dot" data-benefit="3">Postura</button>
-        <button class="benefit-dot" data-benefit="4">Consciência corporal</button>
+        <button class="benefit-dot is-active" data-benefit="0" aria-controls="benefitActive">Força</button>
+        <button class="benefit-dot" data-benefit="1" aria-controls="benefitActive">Mobilidade</button>
+        <button class="benefit-dot" data-benefit="2" aria-controls="benefitActive">Equilíbrio</button>
+        <button class="benefit-dot" data-benefit="3" aria-controls="benefitActive">Postura</button>
+        <button class="benefit-dot" data-benefit="4" aria-controls="benefitActive">Consciência corporal</button>
         <div class="orbit-center" aria-hidden="true"><span>mover</span><small>com presença</small></div>
       </div>
     </div>
@@ -137,10 +140,10 @@
   <section class="movement-section" id="movimento">
     <div class="wrap movement-head"><div><p class="eyebrow">MOVIMENTO NA PRÁTICA</p><h2>O movimento acontece de muitas formas.</h2></div><p>Cada aula pode assumir diferentes ritmos, desafios e possibilidades.</p></div>
     <div class="movement-stage" id="movementStage" tabindex="0" aria-label="Carrossel de movimento">
-      <figure class="motion-card" data-index="0"><img loading="lazy" referrerpolicy="no-referrer" src="https://images.partners.gympass.com/image/partners/v1_CtK7ShFM4ETT_8uY4KFD6A/lg_672cbc40-022e-4ee6-8616-e972cd76cec2_Designsemnome.jpg" alt="Controle"><figcaption><span>01</span>Controle</figcaption></figure>
-      <figure class="motion-card" data-index="1"><img loading="lazy" referrerpolicy="no-referrer" src="https://images.partners.gympass.com/image/partners/v1_CtK7ShFM4ETT_8uY4KFD6A/lg_672cbc40-022e-4ee6-8616-e972cd76cec2_Designsemnome.jpg" alt="Precisão"><figcaption><span>02</span>Precisão</figcaption></figure>
-      <figure class="motion-card" data-index="2"><img loading="lazy" referrerpolicy="no-referrer" src="https://images.partners.gympass.com/image/partners/v1_CtK7ShFM4ETT_8uY4KFD6A/lg_e4e8b03f-fdd9-4846-bffa-1275a41fa68a_IMG4991.jpeg" alt="Fluidez"><figcaption><span>03</span>Fluidez</figcaption></figure>
-      <figure class="motion-card" data-index="3"><img loading="lazy" referrerpolicy="no-referrer" src="https://images.partners.gympass.com/image/partners/v1_CtK7ShFM4ETT_8uY4KFD6A/lg_e4e8b03f-fdd9-4846-bffa-1275a41fa68a_IMG4991.jpeg" alt="Flexibilidade"><figcaption><span>04</span>Flexibilidade</figcaption></figure>
+      <figure class="motion-card" data-index="0"><img loading="lazy" src="assets/space_reformer_wide_deploy500.jpg" alt="Equipamento reformer no espaço Motus"><figcaption><span>01</span>Controle</figcaption></figure>
+      <figure class="motion-card" data-index="1"><img loading="lazy" src="assets/space_chair_detail.jpg" alt="Detalhe dos aparelhos de Pilates"><figcaption><span>02</span>Precisão</figcaption></figure>
+      <figure class="motion-card" data-index="2"><img loading="lazy" src="assets/space_bright_wide.jpg" alt="Área de prática iluminada da Motus"><figcaption><span>03</span>Fluidez</figcaption></figure>
+      <figure class="motion-card" data-index="3"><img loading="lazy" src="assets/space_green_dark_deploy500.jpg" alt="Aparelhos junto à parede verde do studio"><figcaption><span>04</span>Flexibilidade</figcaption></figure>
     </div>
     <div class="wrap movement-controls"><span id="movementCounter">01 / 04 · Controle</span><div><button id="prevMovement" aria-label="Anterior">←</button><button id="nextMovement" aria-label="Próximo">→</button></div></div>
   </section>
@@ -180,10 +183,10 @@
     </div>
   </section>
 
-  <section class="contact" id="contato"><div class="wrap contact-layout"><div><p class="eyebrow">ONDE ESTAMOS</p><h2>Motus Pilates · Taquaral</h2><p>Rua Paula Bueno, 770 — Sala 21<br>Taquaral · Campinas/SP</p><div class="contact-actions"><a class="btn btn-olive" href="https://maps.app.goo.gl/ZWaEe3kF3YJcz2zt6" target="_blank" rel="noreferrer">Abrir no Google Maps ↗</a><a class="btn btn-outline" href="https://wa.me/5519982597807" target="_blank" rel="noreferrer">Chamar no WhatsApp</a></div></div><a class="map-card" href="https://maps.app.goo.gl/ZWaEe3kF3YJcz2zt6" target="_blank" rel="noreferrer"><span>●</span><strong>Taquaral · Campinas</strong><small>VER LOCALIZAÇÃO ↗</small></a></div></section>
+  <section class="contact" id="contato"><div class="wrap contact-layout"><div><p class="eyebrow">ONDE ESTAMOS</p><h2>Motus Pilates · Taquaral</h2><p>Rua Paula Bueno, 770 — Sala 21<br>Taquaral · Campinas/SP</p><div class="contact-actions"><a class="btn btn-olive" href="https://maps.app.goo.gl/oacV6VYw1ZTTJRsN6" target="_blank" rel="noreferrer">Abrir no Google Maps ↗</a><a class="btn btn-outline" href="https://wa.me/5519982597807" target="_blank" rel="noreferrer">Chamar no WhatsApp</a></div></div><a class="map-card" href="https://maps.app.goo.gl/oacV6VYw1ZTTJRsN6" target="_blank" rel="noreferrer" aria-label="Ver a Motus Pilates no Google Maps"><span aria-hidden="true">●</span><strong>Taquaral · Campinas</strong><small>VER LOCALIZAÇÃO ↗</small></a></div></section>
 </main>
 
-<footer><div class="wrap footer-layout"><div><div class="footer-brand">MOTUS <span>PILATES</span></div><p>Movimento com atenção.</p></div><nav><a href="#inicio">Início</a><a href="#a-motus">A Motus</a><a href="#pilates">Pilates</a><a href="#espaco">O espaço</a><a href="https://www.instagram.com/motus_pilatescampinas" target="_blank" rel="noreferrer">Instagram</a><a href="https://wa.me/5519982597807" target="_blank" rel="noreferrer">WhatsApp</a></nav><div><p>Taquaral · Campinas/SP</p><p>Wellhub · TotalPass</p></div></div><div class="wrap copyright">© Motus Pilates</div></footer>
+<footer><div class="wrap footer-layout"><div><div class="footer-brand">MOTUS <span>PILATES</span></div><p>Movimento com atenção.</p></div><nav aria-label="Navegação do rodapé"><a href="#inicio">Início</a><a href="#a-motus">A Motus</a><a href="#pilates">Pilates</a><a href="#espaco">O espaço</a><a href="https://www.instagram.com/motus_pilatescampinas/" target="_blank" rel="noreferrer">Instagram</a><a href="https://wa.me/5519982597807" target="_blank" rel="noreferrer">WhatsApp</a></nav><div><p>Taquaral · Campinas/SP</p><p>Wellhub · TotalPass</p></div></div><div class="wrap copyright">© Motus Pilates</div></footer>
 
 <div class="mobile-cta" id="mobileCta"><a href="https://wa.me/5519982597807" target="_blank" rel="noreferrer">Agendar aula <span>↗</span></a></div>
 <script src="script.js"></script>
