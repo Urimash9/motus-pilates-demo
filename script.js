@@ -144,3 +144,26 @@ stage?.addEventListener('pointerup',e=>{if(startX==null)return;const dx=e.client
 stage?.addEventListener('keydown',e=>{if(e.key==='ArrowRight')moveMotion(1);if(e.key==='ArrowLeft')moveMotion(-1)});
 addEventListener('resize',()=>{renderMotion();if(reduced)renderOrbit(performance.now())});
 renderMotion();
+
+// Build 01.5 — refino exclusivo da assinatura M na base da Hero.
+// A curva deixa de ser uma wave/bloc genérico e passa a ter quatro movimentos claros:
+// subida longa, primeiro pico, vale central marcado, segundo pico dominante e saída estabilizada.
+const heroSignature=document.querySelector('.hero-signature');
+if(heroSignature){
+  heroSignature.setAttribute('viewBox','0 0 1440 180');
+  const fill=heroSignature.querySelector('.m-fill');
+  const thread=heroSignature.querySelector('.m-thread');
+  fill?.setAttribute('d','M0 146 C150 146 268 132 388 96 C480 68 558 39 625 35 C648 34 665 42 676 61 C688 81 698 103 718 110 C738 117 758 108 780 91 C864 38 972 14 1066 18 C1103 20 1127 41 1135 72 C1145 109 1173 130 1218 139 C1288 153 1368 148 1440 146 L1440 180 L0 180 Z');
+  thread?.setAttribute('d','M0 164 C168 164 290 151 420 122 C512 101 585 82 651 79 C676 78 696 88 708 105 C720 122 733 131 752 132 C774 133 798 125 825 109 C913 58 1017 45 1094 54 C1137 59 1169 79 1187 104 C1214 141 1302 157 1440 156');
+  const style=document.createElement('style');
+  style.id='hero-015-refine';
+  style.textContent=`
+    .hero-signature{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:122px;z-index:3;overflow:visible;pointer-events:none}
+    .hero-signature .m-fill{fill:var(--ivory)}
+    .hero-signature .m-thread{fill:none;stroke:rgba(86,93,62,.20);stroke-width:1.05;vector-effect:non-scaling-stroke}
+    @media (min-width:901px){.hero-signature{height:118px}}
+    @media (max-width:900px){.hero-signature{height:108px}}
+    @media (max-width:640px){.hero-signature{width:118%;left:-9%;height:112px}.hero-signature .m-thread{stroke:rgba(86,93,62,.16);stroke-width:.9}}
+  `;
+  document.head.appendChild(style);
+}
