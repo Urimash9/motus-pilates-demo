@@ -136,10 +136,10 @@ if(heroSignature){
   const cards=[...newStage.querySelectorAll('.motion-card')];
   const labels=['Controle','Precisão','Fluidez','Flexibilidade'];
   const images=[
-    ['assets/space_reformer_wide_deploy500.jpg','Equipamento reformer no espaço Motus'],
-    ['assets/space_chair_detail.jpg','Detalhe dos aparelhos de Pilates'],
-    ['assets/space_bright_wide.jpg','Área de prática iluminada da Motus'],
-    ['assets/space_green_dark_deploy500.jpg','Aparelhos junto à parede verde do studio']
+    ['https://gcdn.picsart.com/editing-temp/84a834d2-c422-45d8-bce3-ac57485550a0.jpeg','Movimento de Pilates com postura estável e controle corporal'],
+    ['https://gcdn.picsart.com/editing-temp/ee264720-c220-4864-a45d-0dda4618fa71.jpeg','Exercício de Pilates com foco em precisão e alinhamento'],
+    ['https://gcdn.picsart.com/editing-temp/c45d91d9-d898-40d5-82b6-9c42fb7cf41f.jpeg','Movimento fluido em exercício de Pilates suspenso'],
+    ['https://gcdn.picsart.com/editing-temp/f1ebf418-a96e-49e2-a9d1-5ecb1beea6ec.jpeg','Alongamento de Pilates com amplitude e flexibilidade']
   ];
   cards.forEach((card,i)=>{
     card.removeAttribute('style');
@@ -250,4 +250,23 @@ if(heroSignature){
   `;
   document.head.appendChild(style);
   render();
+})();
+
+// Build 01.11 — curadoria final de imagens.
+// Mantém a estrutura aprovada e troca somente os assets visuais selecionados.
+(()=>{
+  const setImage=(selector,src,alt,position)=>{
+    const img=document.querySelector(selector);
+    if(!img)return;
+    img.src=src;
+    img.removeAttribute('referrerpolicy');
+    if(alt)img.alt=alt;
+    if(position)img.style.objectPosition=position;
+  };
+
+  setImage('.hero-image','https://gcdn.picsart.com/editing-temp/4975e5e4-305c-41ab-b113-26f71f79ef6c.jpeg','Composição visual de estúdio de Pilates inspirada na identidade Motus','50% 54%');
+  setImage('.manifesto-photo img','https://gcdn.picsart.com/editing-temp/df5f362e-8661-4770-8908-aabea39f528d.jpeg','Pessoa em movimento de Pilates em composição inspirada na identidade Motus','50% 44%');
+  setImage('.space-main img','https://gcdn.picsart.com/editing-temp/da3631f6-ade0-489f-b2f1-49e8ec781a44.jpeg','Composição ampla de estúdio inspirada no ambiente visual da Motus','50% 50%');
+  setImage('.space-secondary img','https://gcdn.picsart.com/editing-temp/fdf2073a-0273-4ee9-9067-e6602edaf08a.jpeg','Detalhe de equipamento de Pilates em composição inspirada na Motus','50% 50%');
+  setImage('.cta-photo img','https://images.partners.gympass.com/image/partners/v1_CtK7ShFM4ETT_8uY4KFD6A/lg_03223b3d-d678-4c73-a783-2f9efea7425a_IMG5013.jpeg','Ambiente real da Motus Pilates preparado para a prática','50% 48%');
 })();
