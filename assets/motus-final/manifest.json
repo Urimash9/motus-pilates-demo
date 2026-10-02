@@ -1,70 +1,78 @@
 {
   "version": "01.11-assets-prep",
-  "storage": "base64 text chunks reconstructed client-side to image/webp",
+  "strategy": "Binary image files live in durable media storage; GitHub stores only this UTF-8 manifest to avoid binary connector/Codex issues.",
+  "folder": "Motus Pilates — Assets V1",
   "assets": {
+    "motus-hero-studio-wide": {
+      "role": "Hero / abertura institucional",
+      "file": "motus-hero-studio-wide.jpg",
+      "width": 1672,
+      "height": 941,
+      "url": "https://gcdn.picsart.com/editing-temp/4975e5e4-305c-41ab-b113-26f71f79ef6c.jpeg",
+      "drive_uid": "be70086b-0396-4eef-acb2-f88f3a19480e",
+      "source": "AI-assisted visual asset based on Motus project references"
+    },
     "motus-manifesto-movimento": {
       "role": "Manifesto / apoio humano",
-      "width": 480,
-      "height": 600,
-      "mime": "image/webp",
-      "quality": 52,
-      "chunks": [
-        "motus-manifesto-movimento.1.b64.txt",
-        "motus-manifesto-movimento.2.b64.txt"
-      ],
-      "sha256": "003207c4a455b6b1dee4b498eddb2904c477298dfde2d118343771a77aa09955",
+      "file": "motus-manifesto-movimento.jpg",
+      "width": 1122,
+      "height": 1402,
+      "url": "https://gcdn.picsart.com/editing-temp/df5f362e-8661-4770-8908-aabea39f528d.jpeg",
+      "drive_uid": "3195d9a4-03ab-4f92-80d5-0521120c8881",
+      "source": "AI-assisted visual asset based on Motus project references"
+    },
+    "motus-espaco-wide": {
+      "role": "O Espaço / imagem principal",
+      "file": "motus-espaco-wide.jpg",
+      "width": 1448,
+      "height": 1086,
+      "url": "https://gcdn.picsart.com/editing-temp/da3631f6-ade0-489f-b2f1-49e8ec781a44.jpeg",
+      "drive_uid": "90aeeb74-a477-4c7e-97cc-419999b109a4",
+      "source": "AI-assisted visual asset based on Motus project references"
+    },
+    "motus-espaco-detalhe": {
+      "role": "O Espaço / detalhe vertical",
+      "file": "motus-espaco-detalhe.jpg",
+      "width": 1122,
+      "height": 1402,
+      "url": "https://gcdn.picsart.com/editing-temp/fdf2073a-0273-4ee9-9067-e6602edaf08a.jpeg",
+      "drive_uid": "986c77e2-49c2-4b23-82fc-ef4bac386790",
       "source": "AI-assisted visual asset based on Motus project references"
     },
     "motus-movimento-controle": {
       "role": "Movimento na prática / Controle",
-      "width": 450,
-      "height": 600,
-      "mime": "image/webp",
-      "quality": 52,
-      "chunks": [
-        "motus-movimento-controle.1.b64.txt",
-        "motus-movimento-controle.2.b64.txt"
-      ],
-      "sha256": "318e3154c2a46916fc4ea546679c5f3fecc4994fe82ec15eef877648171b7a35",
+      "file": "motus-movimento-controle.jpg",
+      "width": 1086,
+      "height": 1448,
+      "url": "https://gcdn.picsart.com/editing-temp/84a834d2-c422-45d8-bce3-ac57485550a0.jpeg",
+      "drive_uid": "3d4fc35c-002a-48a7-b995-f177fb91bcba",
       "source": "AI-assisted visual asset based on Motus project references"
     },
     "motus-movimento-precisao": {
       "role": "Movimento na prática / Precisão",
-      "width": 450,
-      "height": 600,
-      "mime": "image/webp",
-      "quality": 52,
-      "chunks": [
-        "motus-movimento-precisao.1.b64.txt",
-        "motus-movimento-precisao.2.b64.txt"
-      ],
-      "sha256": "8a3237045ed3f5fa000359285692e8b785f8c6e4b18547ef22fc0b4a27edcd9e",
+      "file": "motus-movimento-precisao.jpg",
+      "width": 1086,
+      "height": 1448,
+      "url": "https://gcdn.picsart.com/editing-temp/ee264720-c220-4864-a45d-0dda4618fa71.jpeg",
+      "drive_uid": "bca222ca-3163-419b-bbdb-024e76b2dfbc",
       "source": "AI-assisted visual asset based on Motus project references"
     },
     "motus-movimento-fluidez": {
       "role": "Movimento na prática / Fluidez",
-      "width": 450,
-      "height": 600,
-      "mime": "image/webp",
-      "quality": 52,
-      "chunks": [
-        "motus-movimento-fluidez.1.b64.txt",
-        "motus-movimento-fluidez.2.b64.txt"
-      ],
-      "sha256": "95f370cb04ae934623287693be05b7a64484b48ee93e4cfbefb0dc11c2873d41",
+      "file": "motus-movimento-fluidez.jpg",
+      "width": 1086,
+      "height": 1448,
+      "url": "https://gcdn.picsart.com/editing-temp/c45d91d9-d898-40d5-82b6-9c42fb7cf41f.jpeg",
+      "drive_uid": "b2eda77c-e620-4490-9e9d-2539a23abebf",
       "source": "AI-assisted visual asset based on Motus project references"
     },
     "motus-movimento-flexibilidade": {
       "role": "Movimento na prática / Flexibilidade",
-      "width": 450,
-      "height": 600,
-      "mime": "image/webp",
-      "quality": 52,
-      "chunks": [
-        "motus-movimento-flexibilidade.1.b64.txt",
-        "motus-movimento-flexibilidade.2.b64.txt"
-      ],
-      "sha256": "f333a85a7c708029694023e3bee56cf1b3ab08318f2d39d8974cb4d59f4e0274",
+      "file": "motus-movimento-flexibilidade.jpg",
+      "width": 1086,
+      "height": 1448,
+      "url": "https://gcdn.picsart.com/editing-temp/f1ebf418-a96e-49e2-a9d1-5ecb1beea6ec.jpeg",
+      "drive_uid": "f6e3fe23-2e39-4fbd-b864-e6d94226e2c8",
       "source": "AI-assisted visual asset based on Motus project references"
     }
   }
