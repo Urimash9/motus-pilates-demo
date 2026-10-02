@@ -264,7 +264,6 @@ if(heroSignature){
     if(position)img.style.objectPosition=position;
   };
 
-  setImage('.hero-image','https://gcdn.picsart.com/editing-temp/4975e5e4-305c-41ab-b113-26f71f79ef6c.jpeg','Composição visual de estúdio de Pilates inspirada na identidade Motus','50% 54%');
   setImage('.manifesto-photo img','https://gcdn.picsart.com/editing-temp/df5f362e-8661-4770-8908-aabea39f528d.jpeg','Pessoa em movimento de Pilates em composição inspirada na identidade Motus','50% 44%');
   setImage('.space-main img','https://gcdn.picsart.com/editing-temp/da3631f6-ade0-489f-b2f1-49e8ec781a44.jpeg','Composição ampla de estúdio inspirada no ambiente visual da Motus','50% 50%');
   setImage('.space-secondary img','https://gcdn.picsart.com/editing-temp/fdf2073a-0273-4ee9-9067-e6602edaf08a.jpeg','Detalhe de equipamento de Pilates em composição inspirada na Motus','50% 50%');
