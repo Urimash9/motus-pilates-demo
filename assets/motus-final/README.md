@@ -25,5 +25,13 @@ Os arquivos de imagem finais da Build 01.11 ficam fora do Git como binários e s
 ## Implementação
 Ler `assets/motus-final/manifest.json` e usar o campo `url` do asset correspondente no `src` da imagem.
 
+## Correções pendentes da Build 01.11
+Não usar caminhos locais como `/mnt/data/...`. O Codex deve ler os URLs já registrados no manifesto.
+
+1. Na seção **“O espaço também faz parte da experiência”**, substituir a imagem antiga pelo asset `motus-espaco-detalhe`.
+2. No **CTA final verde**, logo antes de “Onde estamos”, substituir a imagem antiga da fachada pelo asset `motus-movimento-flexibilidade`, usando crop/object-position adequado para preservar a pessoa no enquadramento.
+
+Essas duas trocas devem preservar layout, clip-path, proporções e responsividade existentes.
+
 ## Importante
 Os assets acima são imagens visuais assistidas por IA, criadas a partir das referências do projeto Motus. Não devem ser apresentados como fotografia documental de uma cliente ou aluna real específica. Fotos reais da Motus continuam preferíveis quando autenticidade documental for mais importante do que direção visual.
