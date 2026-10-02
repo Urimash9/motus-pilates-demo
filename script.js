@@ -40,7 +40,6 @@ const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const baseAngles=[210,300,20,92,150].map(v=>v*Math.PI/180);
 const trackType=[0,1,0,1,0];
 let orbitStart=performance.now();
-let pauseUntil=0;
 
 function selectBenefit(i){
   dots.forEach((x,j)=>{x.classList.toggle('is-active',j===i);x.setAttribute('aria-selected',String(j===i))});
@@ -51,7 +50,6 @@ function selectBenefit(i){
     if(bText)bText.textContent=benefits[i][2];
     bPanel?.classList.remove('is-changing');
   },140);
-  pauseUntil=performance.now()+2200;
 }
 dots.forEach((btn,i)=>{
   btn.setAttribute('role','tab');
@@ -66,16 +64,23 @@ function renderOrbit(now){
   if(!orbit||!dots.length)return;
   const r=orbit.getBoundingClientRect();
   const isMobile=innerWidth<=640;
-  const outer={rx:r.width*(isMobile?.38:.36),ry:r.height*(isMobile?.23:.25)};
-  const inner={rx:r.width*(isMobile?.25:.22),ry:r.height*(isMobile?.39:.40)};
+  const tracks=isMobile
+    ? [{rx:r.width*.46,ry:r.height*.275,rotation:-12*Math.PI/180},{rx:r.width*.31,ry:r.height*.44,rotation:18*Math.PI/180}]
+    : [{rx:r.width*.40,ry:r.height*.33,rotation:-12*Math.PI/180},{rx:r.width*.28,ry:r.height*.46,rotation:18*Math.PI/180}];
   const elapsed=(now-orbitStart)/1000;
-  const t=reduced||now<pauseUntil?0:elapsed*.07;
+  const t=reduced?0:elapsed*.055;
   dots.forEach((dot,i)=>{
     const a=baseAngles[i]+t*(i%2===0?1:-1);
-    const rad=trackType[i]===0?outer:inner;
-    const x=Math.cos(a)*rad.rx;
-    const y=Math.sin(a)*rad.ry;
-    dot.style.transform=`translate(-50%,-50%) translate(${x}px,${y}px)`;
+    const track=tracks[trackType[i]];
+    const ellipseX=Math.cos(a)*track.rx;
+    const ellipseY=Math.sin(a)*track.ry;
+    const x=ellipseX*Math.cos(track.rotation)-ellipseY*Math.sin(track.rotation);
+    const y=ellipseX*Math.sin(track.rotation)+ellipseY*Math.cos(track.rotation);
+    const labelOnLeft=x>0;
+    dot.dataset.side=labelOnLeft?'left':'right';
+    dot.style.transform=labelOnLeft
+      ? `translate(calc(-100% + 4px),-50%) translate(${x}px,${y}px)`
+      : `translate(-4px,-50%) translate(${x}px,${y}px)`;
   });
   if(!reduced)requestAnimationFrame(renderOrbit);
 }
