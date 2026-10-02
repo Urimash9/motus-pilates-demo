@@ -1,0 +1,86 @@
+{
+  "version": "01.11-assets-prep",
+  "storage": "text SVG wrapper with embedded WebP data",
+  "assets": [
+    {
+      "file": "motus-espaco-detalhe.svg",
+      "role": "O Espaço / detalhe vertical",
+      "width": 800,
+      "height": 1000,
+      "embedded_format": "webp",
+      "quality": 68,
+      "source": "AI-assisted visual asset based on Motus project references",
+      "sha256_webp": "c2216076eb9ffd0a21b0171d528ff19a070978db775a2cec9c78232c206d8946"
+    },
+    {
+      "file": "motus-espaco-wide.svg",
+      "role": "O Espaço / imagem principal",
+      "width": 1100,
+      "height": 825,
+      "embedded_format": "webp",
+      "quality": 68,
+      "source": "AI-assisted visual asset based on Motus project references",
+      "sha256_webp": "d63de31f8d24676672bb2aefef79ca151a2828551cafcf58f96033c2845e3aba"
+    },
+    {
+      "file": "motus-hero-studio-wide.svg",
+      "role": "Hero / abertura institucional",
+      "width": 1200,
+      "height": 675,
+      "embedded_format": "webp",
+      "quality": 68,
+      "source": "AI-assisted visual asset based on Motus project references",
+      "sha256_webp": "b9a7378d7144c11f8a4777c1cc05b8d7bc4249343e731116cbd4474453b23886"
+    },
+    {
+      "file": "motus-manifesto-movimento.svg",
+      "role": "Manifesto / apoio humano",
+      "width": 800,
+      "height": 1000,
+      "embedded_format": "webp",
+      "quality": 68,
+      "source": "AI-assisted visual asset based on Motus project references",
+      "sha256_webp": "e0e8c59bc9444c135dda56a71940d35647180d62d90ee98d19f03d485b3bbb85"
+    },
+    {
+      "file": "motus-movimento-controle.svg",
+      "role": "Movimento na prática / Controle",
+      "width": 750,
+      "height": 1000,
+      "embedded_format": "webp",
+      "quality": 68,
+      "source": "AI-assisted visual asset based on Motus project references",
+      "sha256_webp": "9da063dbf7dadf2ea3d38d1b888f8e0a3b8ff1769904b0963bade2db7159ef5e"
+    },
+    {
+      "file": "motus-movimento-flexibilidade.svg",
+      "role": "Movimento na prática / Flexibilidade",
+      "width": 750,
+      "height": 1000,
+      "embedded_format": "webp",
+      "quality": 68,
+      "source": "AI-assisted visual asset based on Motus project references",
+      "sha256_webp": "c8032d2b51bc027b75fb5d0913f50f5d4fcb4872b7ef3184be3785bd9908f6e6"
+    },
+    {
+      "file": "motus-movimento-fluidez.svg",
+      "role": "Movimento na prática / Fluidez",
+      "width": 750,
+      "height": 1000,
+      "embedded_format": "webp",
+      "quality": 68,
+      "source": "AI-assisted visual asset based on Motus project references",
+      "sha256_webp": "d4f1242131f11b7d5a646754ebeb281cd582e00f766c1ff25c7be16e0768d29e"
+    },
+    {
+      "file": "motus-movimento-precisao.svg",
+      "role": "Movimento na prática / Precisão",
+      "width": 750,
+      "height": 1000,
+      "embedded_format": "webp",
+      "quality": 68,
+      "source": "AI-assisted visual asset based on Motus project references",
+      "sha256_webp": "aafcb9e817a2662fbaebed367eea9bad807d650785100f5d6daf0e1802066d44"
+    }
+  ]
+}
